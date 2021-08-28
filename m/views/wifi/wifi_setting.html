@@ -1,0 +1,80 @@
+<div class="side-left" data-role="header" data-position="inline">
+	<table width="100%">
+        <tr><td width="1.7em"  align=left >
+		        <a href="#/wifi/view"
+                   class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all ui-nodisc-icon"
+                   style="display: inline-block;background-color: #000000;border-color: #000;color: #fff;">Back</a></td>
+            <td align=left ><div style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width:100%;"><span align="center" data-trans="configure_hotspot"></span></div></td>
+            <td align=center>&nbsp;</td>
+        </tr>
+    </table>
+</div>
+
+<div data-role="main" class="ui-content">
+    <form id="frmWifi">
+        * <span class="break-word" data-trans="modify_need_login"></span>
+        <div id="ssidTypeContainer" class="ui-field-contain">
+            <label for="ssidType" data-trans="ssid_type"></label>
+            <select id="ssidType" >
+            </select>
+        </div>
+        <div class="ui-field-contain">
+            <label for="ssid" data-trans="ssid_name"></label>
+            <input id="ssid" name="ssid" type="text" class="required" maxlength="32"/>
+        </div>
+        <div id="security" class="ui-field-contain">
+            <label for="securityMode" data-trans="security_mode"></label>
+            <select id="securityMode">
+                <option value="OPEN">OPEN</option>
+                <option value="WPA2PSK">WPA2(AES)-PSK</option>
+                <option value="WPAPSKWPA2PSK">WPA-PSK/WPA2-PSK</option>
+            </select>
+        </div>
+		<div id="securityWEP" class="ui-field-contain">
+            <label for="securityModeWEP" data-trans="security_mode"></label>
+            <select id="securityModeWEP">
+                <option value="OPEN">OPEN</option>
+				<option value="SHARED">SHARED</option>
+                <option value="WPA2PSK">WPA2(AES)-PSK</option>
+                <option value="WPAPSKWPA2PSK">WPA-PSK/WPA2-PSK</option>
+            </select>
+        </div>
+		<div class="ui-field-contain" id="openTypeContainer">
+            <label for="selEncryptType" data-trans="encrypt_type"></label>
+            <select id="selEncryptType">
+                <option value="NONE" data-trans="encrypt_type_none"></option>
+                <option value="WEP">WEP</option>
+            </select>
+        </div>
+		<div class="ui-field-contain" id="wepkeyContainer">
+            <label for="selWepKeyType" data-trans="wep_default_key"></label>
+            <select id="selWepKeyType">
+                <option value="0" data-trans="wep_key_0"></option>
+                <option value="1" data-trans="wep_key_1"></option>
+                <option value="2" data-trans="wep_key_2"></option>
+                <option value="3" data-trans="wep_key_3"></option>
+            </select>
+        </div>
+		
+		<div class="ui-field-contain" id="weppassContainer">
+            <label for="wepPass" data-trans="wep_key"></label>
+            <div class="show-password-container">
+                <input id="wepPass" name="wepPass" type="password" class="required" maxlength='26'/>
+                <div data-for="wepPass" class="show-password show-password-off"></div>
+            </div>
+        </div>
+        <div class="ui-field-contain" id="passContainer">
+            <label for="pass" data-trans="pass_phrase"></label>
+            <div class="show-password-container">
+                <input id="pass" name="pass" type="password" class="required" minlength='8' maxlength='63'/>
+                <div data-for="pass" class="show-password show-password-off"></div>
+            </div>
+        </div>
+        <div id="openInfo">
+            <span class="break-word sms-draft-tag" data-trans="security_open_info"></span>
+        </div>
+        <div class="margin-top-10em">
+            <a id="wifiSave" type="button" data-trans="apply" class="ui-btn ui-corner-all ui-shadow"></a>
+        </div>
+    </form>
+</div>

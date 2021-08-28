@@ -1,0 +1,54 @@
+<div id="innerContainer">
+    <div class="row header-row">
+        <div class="col-xs-1">
+            <a href="#home">
+                <img alt="" src="img/arrow-back.png">
+            </a>
+        </div>
+        <div class="col-xs-11">
+            <div class="form-title">
+                <h1 data-trans='antenna_select'></h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2">
+		<div class="nav_right">
+			<ul>
+			    <li><a href="#dial_setting" data-trans="dial_mode"></a></li>
+				<li><a href="#net_select" data-trans="net_select"></a></li>
+				<li><a href="#apn_setting" data-trans="apn_setting"></a></li>
+				<li><a href="#net_info" data-trans="net_info"></a></li>
+				<li class="active"><a href="#antenna" data-trans="antenna_select"></a></li>
+				
+			</ul>
+		</div>
+	    </div>
+
+	    <div class="col-xs-10">
+
+<form role="form">
+<div class="form-body">
+	    <h3 class="form-title" data-trans="antenna_info"></h3>
+    <div class="content">
+        <div class="row form-group">
+            <label class="col-xs-4 side-right" data-trans='antenna_select'>
+            </label>
+            <div class="col-xs-8">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <select data-transid='antenna_select_type' id="type1" class="form-control" data-bind="options: typesAntenna, value: selectedAntenna, optionsText: transOption('antenna_select_type'), optionsValue: 'value'">                       
+                        </select>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <input type="button" class="btn btn-primary" data-bind='click: save' data-trans='apply' />
+                </div>
+            </div>
+        </div>
+           
+</div>
+</form>
+    </div>
+</div>
+</div>

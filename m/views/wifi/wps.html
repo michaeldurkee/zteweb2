@@ -1,0 +1,39 @@
+<div class="side-left" data-role="header" data-position="inline">
+	<table width="100%">
+        <tr><td width="1.7em"  align=left >
+		        <a href="#/wifi/view"
+                   class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all ui-nodisc-icon"
+                   style="display: inline-block;background-color: #000000;border-color: #000;color: #fff;">Back</a></td>
+            <td align=left ><div style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width:100%;"><span align="center" data-trans="wps"></span></div></td>
+            <td align=center>&nbsp;</td>
+        </tr>
+    </table>
+</div>
+
+<div data-role="main" class="ui-content">
+    <form id="frmWps">
+        <div id="multiSSIDContainer" class="ui-field-contain">
+            <label for="multiSSID" data-trans="ssid_title"></label>
+            <select id="multiSSID" >
+            </select>
+        </div>
+        <div class="ui-field-contain">
+            <label for="wpsMode" data-trans="wps"></label>
+            <select id="wpsMode">
+                <option value="PIN">PIN</option>
+                <option value="PBC">PBC</option>
+            </select>
+        </div>
+        <div class="ui-field-contain" id="pinContainer">
+            <label for="txtPin">PIN</label>
+            <div class="show-password-container">
+                <input class="required" name="txtPin" id="txtPin" autocomplete="off" type="password" maxlength="9">
+                <div data-for="txtPin" class="show-password show-password-off"></div>
+            </div>
+        </div>
+
+        <div class="margin-top-10em">
+            <a id="wpsSave" type="button" data-trans="apply" class="ui-btn ui-corner-all ui-shadow"></a>
+        </div>
+    </form>
+</div>

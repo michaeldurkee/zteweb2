@@ -1,0 +1,60 @@
+<div class="side-left" data-role="header" data-position="inline">
+    <!--a href="#/home" style="background-color: #000000;border-color: #000;color: #fff;margin-top: 3px;" class="ui-btn ui-btn-left ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+    <h1 data-trans="traffic_control"></h1>
+    <form class="ui-btn-right">
+        <label for="flowSwitch"></label>
+        <select id="flowSwitch" name="flip-select" data-role="flipswitch">
+            <option value="0" data-trans="off"></option>
+            <option value="1" data-trans="on"></option>
+        </select>
+    </form-->
+	<table width="100%">
+            <tr><td width="1.7em"  align=center ><a href="#/home"
+                   class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all ui-nodisc-icon"
+                   style="display: inline-block;background-color: #000000;border-color: #000;color: #fff;">Back</a></td>
+                <td align=left ><span align="center" data-trans="traffic_control"></span></td>
+				<td align=right >
+				<form class="ui-btn-right">
+        <label for="flowSwitch"></label>
+        <select id="flowSwitch" name="flip-select" data-role="flipswitch">
+            <option value="0" data-trans="off"></option>
+            <option value="1" data-trans="on"></option>
+        </select>
+    </form>
+				</td>
+            </tr>
+    </table>
+</div>
+<div id="trafficSwitchOff" data-role="main" class="ui-content">
+    <div class="side-center margin-top-10em">
+        <h3 data-trans="traffic_off"></h3>
+        <span data-trans="traffic_off_detail"></span>
+    </div>
+</div>
+<div id="trafficSwitchOn" data-role="main" class="ui-content margin-top-20">
+    <div id="trafficGraph" style="width: 200px; height: 200px; visibility: visible;margin: 0 auto;">
+    </div>
+    <div class="ui-grid-b margin-top-20">
+        <div class="ui-block-a side-center">
+            <p id="usedInfo" style="font-size:0.8em;"></p>
+            <span class="color-block" style="background-color: #8CC916;"></span>
+            <span data-trans="used_title"></span>
+        </div>
+        <div class="ui-block-b side-center traffic-border">
+            <p id="leftInfo" style="font-size:0.8em;"></p>
+            <span class="color-block" style="background-color: #D8D8D8;"></span>
+            <span data-trans="left_title"></span>
+        </div>
+        <div class="ui-block-c side-center">
+            <p id="packageInfo" style="font-size:0.8em;"></p>
+            <span data-trans="package_title"></span>
+        </div>
+    </div>
+    <div class="ui-grid-a margin-top-20">
+        <div class="ui-block-a"><a href="#/traffic/traffic_adjust" data-trans="traffic_adjust" class="ui-shadow ui-btn ui-corner-all"></a></div>
+        <div class="ui-block-b"><a href="#/traffic/traffic_setting" data-trans="traffic_setting" class="ui-shadow ui-btn ui-corner-all"></a></div>
+    </div>
+</div>
+
+
+

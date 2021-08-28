@@ -1,0 +1,171 @@
+<div id="innerContainer">
+
+    <div class="row header-row">
+        <div class="col-xs-1">
+            <a href="#home">
+                <img alt="" src="img/arrow-back.png">
+            </a>
+        </div>
+        <div class="col-xs-11">
+            <div class="form-title">
+                <h1 data-trans='advanced_settings'></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-2">
+		    <div class="nav_right">
+		    <ul>
+				<li><a href="#sleep_mode" data-trans="sleep_mode"></a></li>
+				<li><a href="#router_setting" data-trans="router_setting"></a></li>
+				<li><a href="#firewall" data-trans="firewall"></a></li>
+				<li data-bind="visible:hasUpdateCheck"><a href="#ota_update" data-trans="update_settings"></a></li>
+				<li data-bind="visible:hasUssd"><a href="#ussd" data-trans="USSD"></a></li>
+				<li data-bind="visible:hasUsb"><a href="#usb" data-trans="hardware_setting"></a></li>
+				<li data-bind="visible:hasDdns"><a href="#ddns" data-trans="DDNS"></a></li>
+				<li class="active"><a href="#tr069config" data-trans="tr069config"></a></li>
+				<li><a href="#others" data-trans="others"></a></li>
+			</ul>
+			</div>
+		</div>
+		<div class="col-xs-10">
+		
+<div class="form-body">
+    <form id="tr069Form">
+		<h3 class="form-title" data-trans='tr069config'></h3>
+        <div class="content">
+	    	    <div class="row form-group">
+		    	<label class="col-xs-4 side-right" data-trans='server_url'></label>
+		    	<div class="col-xs-4">
+		    		<input type="text" id="serverURL" name="serverURL" data-bind="value: serverUrl" class="required form-control" maxlength="256">
+		    	</div>
+		    </div>
+		    <div class="row form-group">
+		    	<label class="col-xs-4 side-right" data-trans='server_user_name'></label>
+		    	<div class="col-xs-4">
+		    		<input type="text" id="serverusername" name="serverusername" data-bind="value: serverUserName" class="required form-control" maxlength="256">
+		    	</div>
+		    </div>
+		    <div class="row form-group">
+		    	<label class="col-xs-4 side-right" data-trans='server_password'></label>
+		    	<div class="col-xs-4">
+		    		<input type="password" id="serveruserpassword" name="serveruserpassword"  data-bind="value: serverPassword" class="required form-control" maxlength="256">
+		    	</div>
+		    </div>
+		    <div class="row form-group">
+		    	<label class="col-xs-4 side-right" data-trans='connection_request_url'></label>
+		    	<div class="col-xs-4">
+			    	<input type="text" class="form-control" data-bind="value: requestUrl" maxlength="256" disabled />
+			    </div>
+		    </div>
+		    <div class="row form-group">
+			    <label class="col-xs-4 side-right" data-trans="connection_request_uname"></label>
+			    <div class="col-xs-4">
+			    	<input type="text" id="connrequestname" name="connrequestname" data-bind="value: requestUserName" class="required form-control" maxlength="256">
+		    	</div>
+		    </div>		
+		    <div class="row form-group">
+			    <label class="col-xs-4 side-right" data-trans="connection_request_password"></label>
+			    <div class="col-xs-4">
+			    	<input type="password" id="connrequestpassword" name="connrequestpassword" data-bind="value: requestPassword" class="required form-control" maxlength="256" />
+			    </div>
+		    </div>
+		    <!--<div class="row form-group">
+		    	<label class="col-xs-4 side-right" data-trans="port"></label>
+		    	<div class="col-xs-4">
+		    		<input type="text" id="port" name="port" data-bind="value: requestPort" class="required form-control" maxlength="256">
+		    	</div>
+		    </div>-->
+            <div class="row form-group" style="display:none">
+                <label class="col-xs-4 side-right" data-trans="periodic_inform"></label>
+                <div class="col-xs-3">
+                    <input type="radio" name="informGrp" id="informEnable" data-bind="checked: informSetting" value="1"/>
+                    <label for="informEnable" data-trans="enable"></label>
+				</div>
+				<div class="col-xs-3">
+                    <input type="radio" name="informGrp" id="informDisable" data-bind="checked: informSetting" value="0"/>
+                    <label for="informDisable" data-trans="disable"></label>
+                </div>
+            </div>
+            <div class="row form-group" data-bind='visible: informSetting() == "1"'>
+                <label class="col-xs-4 side-right" for="txtInformInterval" data-trans="periodic_inform_interval"></label>
+                <div class="col-xs-4">
+                    <input id="txtInformInterval" name="txtInformInterval"  type="text" data-bind="value: informInterval, valueUpdate: 'keypress'" class="required form-control" maxlength="15"/>
+                </div>
+            </div>
+            <div id="manualSetTime" data-bind='visible: informSetting() == "1"'>
+			<div class="row form-group">
+                <label class="col-xs-4 side-right" data-trans='periodic_inform_time'></label>
+				<div class="col-xs-8">
+                    <select id="manualYear" class="form-control" style="display:inline-block; width:auto; padding-right:1px; padding-left:1px" data-bind="options: years, value: currentYear, optionsText: 'text', optionsValue: 'value', event:{change: initDateList}"></select>
+                    <label for="manualYear" style="display:inline-block; width:auto; padding-right:0" data-trans="year"></label>
+                    
+					<select id="manualMonth" class="form-control" style="display:inline-block; width:auto; padding-right:5px; padding-left:5px" data-bind="options: months, value: currentMonth, optionsText: 'text', optionsValue: 'value', event: {change: initDateList}"></select>
+                    <label for="manualMonth" style="display:inline-block; width:auto; padding-right:0" data-trans="month"></label>
+                    
+					<select id="manualDate" class="form-control" style="display:inline-block; width:auto; padding-right:5px; padding-left:5px" data-bind="options: dates, value: currentDate, optionsText: 'text', optionsValue: 'value'"></select>
+                    <label for="manualDate" style="display:inline-block; width:auto; padding-right:0" data-trans="date"></label>					
+                </div>
+			</div>
+			<div class="row form-group">
+			    <label class="col-xs-4 side-right"></label>
+				<div class="col-xs-8">
+				    <select id="manualHour" class="form-control" style="display:inline-block; width:auto; padding-right:7px; padding-left:7px" data-bind="options: hours, value: currentHour, optionsText: 'text', optionsValue: 'value'"></select>
+                    <label for="manualHour" style="display:inline-block; width:auto; padding-right:0" data-trans="hour"></label>
+                    
+					<select id="manualMinute" class="form-control" style="display:inline-block; width:auto; padding-right:5px; padding-left:5px" data-bind="options: minutes, value: currentMinute, optionsText: 'text', optionsValue: 'value'"></select>
+                    <label for="manualMinute" style="display:inline-block; width:auto; padding-right:0" data-trans="minute"></label>
+                    
+					<select id="manualSecond" class="form-control" style="display:inline-block; width:auto; padding-right:5px; padding-left:5px" data-bind="options: seconds, value: currentSecond, optionsText: 'text', optionsValue: 'value'"></select>
+                    <label for="manualMinute" style="display:inline-block; width:auto; padding-right:0" data-trans="second"></label>
+				</div>
+			</div>
+            </div>
+            <div class="row form-group" style="display:none;">
+                <label class="col-xs-4 side-right" data-trans="certificate_import"></label>
+                <div class="col-xs-3">
+                    <input type="radio" name="certificateGrp" id="certificateEnable" data-bind="checked: certificateSetting" value="1"/>
+                    <label for="certificateEnable" data-trans="enable"></label>
+				</div>
+				<div class="col-xs-3">
+                    <input type="radio" name="certificateGrp" id="certificateDisable" data-bind="checked: certificateSetting" value="0"/>
+                    <label for="certificateDisable" data-trans="disable"></label>
+                </div>
+            </div>
+        <div class="form-buttons" data-bind="visible: certificateSetting() != '1'">
+            <input type="submit" id="submitBtn069" class="btn btn-primary" data-trans="apply" />
+        </div>
+        </div>
+    </form>
+    <div class="row form-group" data-bind='visible: certificateSetting() == "1"' style="margin-top: -25px; *+margin-top: -25px;margin-left: 5px;">
+        <iframe id="certificateUploadIframe" name="certificateUploadIframe" scrolling="no" frameborder="0" width="0" height="0" style="height:0px;width:0px;"></iframe>
+        <form method="post" name="UploadCertificate" id="UploadCertificate" action="/cgi-bin/upload_tr069_cert.cgi" enctype="multipart/form-data" target="certificateUploadIframe">
+            <input id="fileField" name="filename" maxlength="200" type="file"/>
+            <div class="fileUploadDiv">
+                <input data-trans="import_certificate_btn" type="button" class="btn btn-primary margin-left-5 margin-top-2 " onclick="certificateUploadSubmitClickHandler();" />
+            </div>
+			<div class="clear"></div>
+        </form>
+    </div>
+
+	<div class="form-buttons" data-bind='visible: certificateSetting() == "1"'>
+		<input type="button" class="btn btn-primary" data-trans="apply" onclick="$('#submitBtn069').trigger('click');"/>
+	</div>
+	<div class="form-note">
+            <div class="notes-title">&nbsp;</div>
+            <ul class="notes-content">
+                <li data-trans="tr069_note1"></li>
+                <li data-trans="tr069_note2"></li>
+                <li data-trans="tr069_note3"></li>
+                <li data-trans="tr069_note4"></li>
+                <li data-trans="tr069_note5"></li>
+                <li data-trans="tr069_note6"></li>
+				<li data-trans="tr069_note7"></li>
+            </ul>
+		</div>
+</div>
+
+		</div>
+    </div>
+</div>

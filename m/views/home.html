@@ -1,0 +1,72 @@
+<div data-role="header">
+    <h1 style="margin-top: 10px;margin-bottom: 10px;"><img class="vertical-middle" src="img/logo_zte.png" alt=""/></h1>
+    <a id="logout" style="margin-top: 16px;background-color: #000000;border-color: #000;color: #fff;" href="#" class="ui-btn-right ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon ui-icon-logout">Logout</a>
+    
+</div>
+<div data-role="main" id="home_container">
+    <table width="100%" bgcolor="#fff" cellspacing="0" cellpadding="0">
+		<tr>
+            <td width="60%" style="border-right: 1px solid #f0f0f0;">
+                <div class="nav-grid-custom" style="text-align: center;padding:1em 0 1em 0;">
+					<img class="nav_icon" id="signal_div" data-bind="attr:{'src': signalCssClass}"/>
+					<div>
+                        <span id="networkOperator"></span>&nbsp;
+                        <span id="network_type"></span>&nbsp;
+                        <span id="roaming"></span>
+                    </div>
+				</div>
+            </td>
+            <td width="40%">
+                <div class="nav-grid-custom" style="text-align: center;">
+                    <div id="battery_div" style="display: none;"><img class="nav_icon" width="70" src="./img/battery_three.png"></div>
+				</div>
+            </td>
+        </tr>
+	</table>
+	<div class="ui-content">
+    <ul data-role="listview" class="ui-nodisc-icon ui-alt-icon" style="padding-top: 0">
+		<li><a class="ui-li customize-ui-li-attach-devices" href="#/network/view">
+                <img src="./img/icon_con.png" class="ui-li-icon customize-ul-li-icon-attach-devices" style="max-width: 25%; max-height: 70%;">
+                <span data-trans="connection_settings" style="font-weight: bold;font-size: 1.2em;color: #333333;"></span>
+                <!--p><span id="connect_status"  style="font-weight: bold;font-size: 14px;color: #828282;"></span></p-->
+				<p style="font-weight: bold;font-size: 14px;color: #828282;"><span id="speed_down"></span>↓ <span id="speed_up"></span>↑</p>
+        </a></li>
+		
+		<li id="traffic"><a class="ui-li customize-ui-li-attach-devices" id="trafficGo" href="#">
+                <img src="./img/flow_icon.png" class="ui-li-icon customize-ul-li-icon-attach-devices" style="max-width: 25%; max-height: 70%;">
+                <span data-trans="traffic_control" style="font-weight: bold;font-size: 1.2em;color: #333333;"></span>
+                <div id="traffic_div" style="display: none; ">
+                    <p id="traffic_data_div" style="display: none;font-weight: bold;font-size: 14px;color: #828282;"><span id="data_used"></span>/<span id="data_total"></span></p>
+                    <p id="traffic_time_div" style="display: none;font-weight: bold;font-size: 14px;color: #828282;"><span id="time_used"></span>/<span id="time_total"></span></p>
+                </div>
+        </a></li>
+		
+		<li><a class="ui-li customize-ui-li-attach-devices" href="#/wifi/view">
+                <img src="./img/wifi_icon.png" class="ui-li-icon customize-ul-li-icon-attach-devices" style="max-width: 25%; max-height: 70%;">
+                <span data-trans="wifi_hotspot" style="font-weight: bold;font-size: 1.2em;color: #333333;"></span>
+                <p id="wireless_size" style="font-weight: bold;font-size: 14px;color: #828282;"></p>
+        </a></li>
+		
+		<li id="sms"><a class="ui-li customize-ui-li-attach-devices" href="#/sms/list">
+                <img id="smsIcon" src="./img/message_icon.png" class="ui-li-icon customize-ul-li-icon-attach-devices" style="max-width: 25%; max-height: 70%;">
+                <div style="display: none;" id="smsNewCount" class="home-sms-count"></div>
+				<span data-trans="sms" style="font-weight: bold;font-size: 1.2em;color: #333333;"></span>
+                <p><span id="sms_used"  style="font-weight: bold;font-size: 14px;color: #828282;"></span></p>
+        </a></li>
+		 
+		<li><a class="ui-li customize-ui-li-attach-devices" href="#/others/view">
+                <img src="./img/setting_icon.png" class="ui-li-icon customize-ul-li-icon-attach-devices" style="max-width: 25%; max-height: 70%;">
+                <span data-trans="other_settings" style="font-weight: bold;font-size: 1.2em;color: #333333;"></span>
+                <p><span data-trans="login_pwd"  style="font-weight: bold;font-size: 14px;color: #828282;"></span></p>
+        </a></li>
+		
+    </ul>
+	</div>
+</div>
+
+<!--div class="margin-top-20 side-center">
+    <a href="javascript:void(0);" style="text-decoration: none;" data-trans="pc_version" onclick="confirmToPCView();"></a> | <span data-trans="mobile_version"></span>
+</div-->
+<div class="margin-top-20 margin-left-20 margin-right-20 side-center margin-bottom-15">
+    <span data-trans='copyright'></span>
+</div>
